@@ -23,20 +23,6 @@
 	<properties>
 		<start-class>br.com.mvcs.example.Application</start-class>
 	</properties>
-	<distributionManagement>
-		<repository>
-			<uniqueVersion>false</uniqueVersion>
-			<id>openshift-nexus</id>
-			<name>Openshift Nexus Release Repository</name>
-			<url>http://nexus-ci.192.168.99.100.nip.io/repository/maven-releases/</url>
-		</repository>
-		<snapshotRepository>
-			<uniqueVersion>true</uniqueVersion>
-			<id>openshift-nexus</id>
-			<name>Openshift Nexus Release Repository</name>
-			<url>http://nexus-ci.192.168.99.100.nip.io/repository/maven-snapshots/</url>
-		</snapshotRepository>
-	</distributionManagement>
 	<dependencies>
 
 		<dependency>
