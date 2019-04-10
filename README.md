@@ -23,6 +23,43 @@ Once the application runs you should see something like this
 2017-08-29 17:31:23.091  INFO 19387 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8090 (http)
 2017-08-29 17:31:23.097  INFO 19387 --- [           main] br.com.mvcs.example.Application        : Started Application in 22.285 seconds (JVM running for 23.032)
 ```
+## How to Build Image for Docker
+
+Execute the command to create a image for testing this app.
+
+```
+Command:
+
+        docker build -t <image_name>:<tag> .
+
+example:
+
+        docker build -t devops-mvcs:1.0 . 
+```
+
+See last step on Dockerfile:
+
+```
+
+        CMD ["java", "-jar", "-Dspring.profiles.active=test", "/opt/spring-boot-rest/target/spring-boot-rest-example.jar"]
+
+```
+This image will run the projet with test profile. 
+
+## How to run this image with Docker
+
+Execute the command to create a image for testing this app.
+
+```
+Command:
+
+        docker run -d -p 8090:8090 -p 8091:8091 <image_name>:<tag> 
+
+example:
+
+        docker run -d -p 8090:8090 -p 8091:8091 devops-mvcs:1.0
+```
+
 
 ## About the Service
 
@@ -182,8 +219,3 @@ or
 java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 -Dspring.profiles.active=test -Ddebug -jar target/spring-boot-rest-example-0.5.0.war
 ```
 and then you can connect to it remotely using your IDE. For example, from IntelliJ You have to add remote debug configuration: Edit configuration -> Remote.
-
-# Questions and Comments: khoubyari@gmail.com
-
-
-Ajustando para a primira feature
